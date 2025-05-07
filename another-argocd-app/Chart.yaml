@@ -1,0 +1,5 @@
+# filepath: helm-argocd-app/Chart.yaml
+apiVersion: v2
+name: another-argocd-app
+description: A Helm chart for managing Argo CD Application configuration
+version: 0.1.0

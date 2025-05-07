@@ -1,0 +1,21 @@
+# filepath: helm-argocd-app/values.yaml
+metadata:
+  name: another-argocd-app
+  namespace: argocd
+
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/VIncentTetteh/argocd-testing.git
+    path: argo-test-app
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: another-nginx
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
